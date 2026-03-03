@@ -1,45 +1,46 @@
-# Operations & Fulfilment Monitoring Dashboard
+# Inventory & Supply Chain Management Dashboard
 
 **Organization:** Amazon (Simulated Enterprise E-Commerce Model)  
 **Tool:** Power BI  
 **Dataset:** Synthetic Global E-Commerce Dataset – 100,000 Transaction Records  
-**Dashboard Focus:** Operational Efficiency, Fulfilment Performance, Delivery Tracking, Cost Monitoring, and Regional Analysis  
-**Date:** 01 March 2026  
-**Created by:** Soham S. Amburle  
+**Dashboard Focus:** Inventory Management, Supply Chain Efficiency, Fulfilment Cost Analysis, Delivery Performance, and Return Monitoring  
+**Date:** 26 – 28 February 2026  
+**Created by:** Soham S. Amburle
 
 ---
 
 ## Overview
 
-The **Operations & Fulfilment Monitoring Dashboard** provides an executive and operational view of logistics and fulfilment performance within a global e-commerce business model inspired by Amazon. Built using a synthetic dataset of 100,000 transaction-level records, this dashboard focuses on monitoring order volume, delivery performance, return and cancellation rates, fulfilment cost efficiency, and regional operational effectiveness.
+The **Inventory & Supply Chain Management Dashboard** provides an executive and operational view of inventory movement, fulfilment efficiency, delivery reliability, and cost management within a global e-commerce business model inspired by Amazon. Built using a synthetic dataset of 100,000 transaction-level records, this dashboard focuses on monitoring inventory trends, product category distribution, delivery performance across countries, fulfilment cost allocation, and order status distribution.
 
-The primary objective of this dashboard is to help executive leadership, operations managers, and supply chain teams answer key strategic questions:
+The primary objective of this dashboard is to help executive leadership, supply chain managers, and operations teams answer strategic questions:
 
-- What is the total order volume and throughput over time?  
-- How efficient are delivery operations and are orders delivered on time?  
-- Which regions incur higher fulfilment costs?  
-- What are the trends in returns and cancellations?  
-- How does operational performance vary by customer segment, product category, or sales channel?  
+- What is the total order volume and quantity sold over time?  
+- How efficient are fulfilment operations and what is the cost per order?  
+- Which product categories incur higher fulfilment costs?  
+- What are the delivery performance trends across countries?  
+- What is the trend of returns and reverse logistics issues?  
+- How does operational performance vary by product, region, or sales channel?
 
-By combining executive KPI monitoring, trend analysis, geographic mapping, interactive filtering, and narrative storytelling, the dashboard delivers a comprehensive and executive-ready operational view.
+By combining executive KPI monitoring, trend analysis, cost distribution, and interactive filtering, the dashboard delivers a comprehensive and executive-ready operational view.
 
 ---
 
 ## Business Storyline & Analytical Flow
 
-### 1. Executive Operations Snapshot – KPI Cards
+### 1. Executive Supply Chain Snapshot – KPI Cards
 
 Seven KPI cards provide a high-level summary of operational performance:
 
 - **Total Orders**  
+- **Total Quantity Sold**  
 - **Total Fulfilment Cost**  
 - **Fulfilment Cost per Order**  
 - **Average Delivery Time (Days)**  
 - **On-Time Delivery %**  
-- **Return Rate %**  
-- **Cancellation Rate %**
+- **Return Rate %**
 
-These KPIs establish immediate visibility into order scale, operational efficiency, cost effectiveness, and delivery performance.
+These KPIs establish immediate visibility into order scale, inventory efficiency, cost control, and delivery reliability.
 
 ---
 
@@ -47,69 +48,68 @@ These KPIs establish immediate visibility into order scale, operational efficien
 
 All visuals dynamically respond to the following slicers:
 
-- **Order Date**  
-- **Year**  
-- **Month Name**  
-- **Customer Segment (Prime / Non-Prime)**  
-- **Customer Country**  
+- **DATE (Month)**  
+- **DATE (Year)**  
 - **Product Category**  
+- **Sub-Category**  
 - **Brand**  
+- **Customer Country**  
 - **Sales Channel (Web / Mobile App)**  
-- **Marketing Channel (Google / Meta / Email / Organic)**  
-- **Order Status**  
+- **Order Status**
 
-These controls allow dynamic operational analysis across geography, customer segment, product, channel, and time.
-
----
-
-### 3. Delivery Time Trend – Line Chart
-
-- **X-Axis:** Month Name  
-- **Y-Axis:** Average Delivery Time (Days)  
-
-This visual highlights operational efficiency trends and delivery bottlenecks over time.
+These slicers allow multi-dimensional operational analysis across geography, product, channel, and time.
 
 ---
 
-### 4. Order Volume Trend – Area Chart
+### 3. Inventory Movement Trend – Line Chart
 
-- **X-Axis:** Month Name  
-- **Y-Axis:** Total Orders  
+- **X-Axis:** Order_Date (Month)  
+- **Y-Axis:** Total Quantity Sold  
+- **Unit:** Units
 
-Illustrates seasonal peaks, order throughput, and capacity planning requirements.
-
----
-
-### 5. On-Time Delivery Performance by Region – Clustered Bar Chart
-
-- **Axis:** Customer Country  
-- **Values:** On-Time Delivery %  
-- **Optional Legend:** Customer State  
-
-This visual identifies regional performance disparities, allowing targeted operational improvements.
+Shows inventory movement trends and operational demand patterns over time.
 
 ---
 
-### 6. Fulfilment Cost by Region – Map Visualization
+### 4. Inventory Movement by Product Category – Clustered Column Chart
 
-- **Location:** Customer Country  
-- **Size / Color Saturation:** Total Fulfilment Cost  
-- **Tooltip:** Country/State + Fulfilment Cost  
+- **X-Axis:** Product_Category  
+- **Y-Axis:** Total Quantity Sold  
+- **Unit:** Units  
+- **Optional Legend:** Sub-Category
 
-Supports logistics cost optimization and regional resource allocation decisions.
+Highlights product category movement volumes.
 
 ---
 
-### 7. Narrative — Operational Insights – Text / Narrative Visual
+### 5. Delivery Performance by Country – Clustered Bar Chart
 
-Provides a concise executive summary of:
+- **X-Axis:** Avg Delivery Time (Days)  
+- **Y-Axis:** Customer_Country  
+- **Color:** On-Time Delivery %  
+- **Unit:** Days / %  
 
-- Total orders and throughput trends  
-- Average delivery time and on-time delivery  
-- Fulfilment cost distribution  
-- Returns and cancellations trends  
+Identifies regional delivery performance disparities.
 
-This visual communicates actionable operational insights in plain language.
+---
+
+### 6. Fulfilment Cost Distribution by Product Category – Tree Map
+
+- **Group:** Product_Category  
+- **Values:** Total Fulfilment Cost  
+- **Unit:** Currency ($, display units in Millions)  
+
+Highlights cost concentration across product categories.
+
+---
+
+### 7. Order Status Distribution – Pie Chart
+
+- **Values:** Count of Orders  
+- **Legend:** Order_Status  
+- **Unit:** Count of Orders  
+
+Provides visibility into delivered, returned, and cancelled orders.
 
 ---
 
@@ -117,13 +117,13 @@ This visual communicates actionable operational insights in plain language.
 
 This dashboard enables stakeholders to:
 
-- Monitor operational and fulfilment KPIs in a consolidated executive view  
-- Compare regional efficiency and cost distribution  
-- Identify bottlenecks and inefficiencies in delivery and fulfilment processes  
-- Track return and cancellation trends  
-- Support data-driven supply chain and operational decision-making  
+- Monitor inventory and supply chain KPIs in a consolidated executive view  
+- Compare product categories and regional performance  
+- Identify high-cost categories and delivery bottlenecks  
+- Track returns and operational efficiency over time  
+- Support data-driven supply chain, inventory, and fulfilment decisions
 
-By integrating KPI cards, slicers, trend analytics, geographic mapping, and narrative storytelling, the dashboard delivers a professional, enterprise-grade operational intelligence solution.
+By integrating KPI cards, slicers, trend analytics, and category/geographic-level visuals, the dashboard delivers a professional, enterprise-grade operational intelligence solution.
 
 ---
 
@@ -134,7 +134,7 @@ By integrating KPI cards, slicers, trend analytics, geographic mapping, and narr
 - **Record Count:** 100,000 transaction-level records  
 - **Time Period:** 2021–2024  
 - **Model Design:** Star Schema (Fact_Orders with Dimension Tables for Date, Customer, Product, and Channel)  
-- **Purpose:** Operations & fulfilment analytics demonstration and enterprise BI portfolio development  
+- **Purpose:** Inventory & supply chain analytics demonstration and enterprise BI portfolio development
 
 ---
 
@@ -142,5 +142,5 @@ By integrating KPI cards, slicers, trend analytics, geographic mapping, and narr
 
 ---
 
-**Dashboard and Documentation by SOHAM S. AMBURLE**  
-**01 March 2026**
+**Dashboard and Documentation by Soham S. Amburle**  
+**26 – 28 February 2026**
